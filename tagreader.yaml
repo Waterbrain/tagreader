@@ -377,6 +377,15 @@ text_sensor:
       name: "${friendly_name} Connected SSID"
       icon: mdi:wifi-strength-2
       entity_category: diagnostic
+    bssid:
+      name: "${friendly_name}  Connected BSSID"
+      entity_category: diagnostic
+    mac_address:
+      name: "${friendly_name} Mac Wifi Address"
+      entity_category: diagnostic
+    scan_results:
+      name: "${friendly_name} Latest Scan Results"
+      entity_category: diagnostic
 
 # Define buzzer as output for RTTTL
 rtttl:
@@ -393,3 +402,17 @@ light:
   id: activity_led
   name: "${friendly_name} LED"
   restore_mode: ALWAYS_OFF
+sensor:
+  - platform: wifi_signal # Reports the WiFi signal strength/RSSI in dB
+    name: "Señal WiFi dB"
+    id: wifi_signal_db
+    update_interval: 60s
+    entity_category: "diagnostic"
+
+  - platform: copy # Reports the WiFi signal strength in %
+    source_id: wifi_signal_db
+    name: "Señal WiFi %"
+    filters:
+      - lambda: return min(max(2 * (x + 100.0), 0.0), 100.0);
+    unit_of_measurement: "Señal %"
+    entity_category: "diagnostic"
