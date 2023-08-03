@@ -11,9 +11,13 @@ wifi:
     password: !secret wifi_passwordNetwork3
   - ssid: !secret wifi_ssidNetwork4
     password: !secret wifi_passwordNetwork4
-# networks:
-#    - ssid: 'REPLACEME'          # Enter your WiFi SSID here. Example: `ssid: 'your_network_name'`
-#      password: 'REPLACEME'      # Enter your wifi password here. Example: `password: 'abcde123456'`
+# Optional manual IP
+  manual_ip:
+    static_ip: 192.168.1.90
+    gateway: 192.168.1.1
+    subnet: 255.255.255.0
+    dns1: 80.58.61.250
+    dns2: 80.58.61.254
   ap:
     ssid: ${name}
 
