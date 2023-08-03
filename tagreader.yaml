@@ -1,5 +1,16 @@
-# Insert your SSID and Your PWD after inital setup
+####################################################################################################################
+# basado en github://adonno/tagreader/tagreader.yaml
+# Insert your's SSID and Your's PWD after inital setup in the secrets.yaml
 wifi:
+  networks:
+  - ssid: !secret wifi_ssidNetwork1
+    password: !secret wifi_passwordNetwork1
+  - ssid: !secret wifi_Network2
+    password: !secret wifi_passwordNetwork2
+  - ssid: !secret wifi_ssidNetwork3
+    password: !secret wifi_passwordNetwork3
+  - ssid: !secret wifi_ssidNetwork4
+    password: !secret wifi_passwordNetwork4
 # networks:
 #    - ssid: 'REPLACEME'          # Enter your WiFi SSID here. Example: `ssid: 'your_network_name'`
 #      password: 'REPLACEME'      # Enter your wifi password here. Example: `password: 'abcde123456'`
@@ -10,7 +21,7 @@ wifi:
 captive_portal:
 
 dashboard_import:
-  package_import_url: github://adonno/tagreader/tagreader.yaml
+  package_import_url: github://waterbrain/tagreader/tagreader.yaml
 
 improv_serial:
 
@@ -339,7 +350,7 @@ pn532_i2c:
 # Define the buzzer output
 output:
 - platform: esp8266_pwm
-  pin: D7
+  pin: GPIO13
   id: buzzer
 
 binary_sensor:
@@ -371,7 +382,7 @@ rtttl:
 light:
 - platform: neopixelbus
   variant: WS2812
-  pin: D8
+  pin: GPIO15
   num_leds: 1
   flash_transition_length: 500ms
   type: GRB
