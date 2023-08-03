@@ -5,7 +5,7 @@ wifi:
   networks:
   - ssid: !secret wifi_ssidNetwork1
     password: !secret wifi_passwordNetwork1
-  - ssid: !secret wifi_Network2
+  - ssid: !secret wifi_ssidNetwork2
     password: !secret wifi_passwordNetwork2
   - ssid: !secret wifi_ssidNetwork3
     password: !secret wifi_passwordNetwork3
