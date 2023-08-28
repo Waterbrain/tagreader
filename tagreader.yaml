@@ -1,23 +1,6 @@
 ####################################################################################################################
 # basado en github://adonno/tagreader/tagreader.yaml
 # Insert your's SSID and Your's PWD after inital setup in the secrets.yaml
-wifi:
-  networks:
-  - ssid: !secret wifi_ssidNetwork1
-    password: !secret wifi_passwordNetwork1
-  - ssid: !secret wifi_ssidNetwork2
-    password: !secret wifi_passwordNetwork2
-  - ssid: !secret wifi_ssidNetwork3
-    password: !secret wifi_passwordNetwork3
-  - ssid: !secret wifi_ssidNetwork4
-    password: !secret wifi_passwordNetwork4
-# Optional manual IP
-  manual_ip:
-    static_ip: 192.168.1.90
-    gateway: 192.168.1.1
-    subnet: 255.255.255.0
-    dns1: 80.58.61.250
-    dns2: 80.58.61.254
   ap:
     ssid: ${name}
 
@@ -33,7 +16,11 @@ improv_serial:
 substitutions:
   name: tagreader
   friendly_name: TagReader
-
+  static_ip_value: 192.168.1.90
+  gateway_value: 192.168.1.1
+  subnet_value: 255.255.255.0
+  dns1_value: 80.58.61.250
+  dns2_value: 80.58.61.254
 esphome:
   name: $name
   platform: ESP8266
@@ -49,6 +36,23 @@ esphome:
     name: waterbrain.tag_reader
     version: "1.4"
 # If buzzer is enabled, notify on api connection success
+wifi:
+  networks:
+  - ssid: !secret wifi_ssidNetwork1
+    password: !secret wifi_passwordNetwork1
+  - ssid: !secret wifi_ssidNetwork2
+    password: !secret wifi_passwordNetwork2
+  - ssid: !secret wifi_ssidNetwork3
+    password: !secret wifi_passwordNetwork3
+  - ssid: !secret wifi_ssidNetwork4
+    password: !secret wifi_passwordNetwork4
+# Optional manual IP
+  manual_ip:
+    static_ip: static_ip_value
+    gateway: gateway_value
+    subnet: subnet_value
+    dns1: dns1_value
+    dns2: dns2_value
   on_boot:
     priority: -10
     then:
