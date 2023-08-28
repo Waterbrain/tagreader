@@ -1,11 +1,6 @@
 ####################################################################################################################
 # basado en github://adonno/tagreader/tagreader.yaml
 # Insert your's SSID and Your's PWD after inital setup in the secrets.yaml
-  ap:
-    ssid: ${name}
-
-# Enable the captive portal for inital WiFi setup
-captive_portal:
 
 dashboard_import:
   package_import_url: github://waterbrain/tagreader/tagreader.yaml
@@ -72,6 +67,9 @@ wifi:
     subnet: $subnet_value
     dns1: $dns1_value
     dns2: $dns2_value
+
+  ap:
+    ssid: ${name}
 switch:
 - platform: template
   name: "${friendly_name} Buzzer Enabled"
