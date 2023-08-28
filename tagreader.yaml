@@ -34,7 +34,7 @@ esphome:
   # configuration and updates.
   project:
     name: waterbrain.tag_reader
-    version: "1.4"
+    version: "2.0"
 # If buzzer is enabled, notify on api connection success
 wifi:
   networks:
