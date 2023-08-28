@@ -36,23 +36,6 @@ esphome:
     name: waterbrain.tag_reader
     version: "2.0"
 # If buzzer is enabled, notify on api connection success
-wifi:
-  networks:
-  - ssid: !secret wifi_ssidNetwork1
-    password: !secret wifi_passwordNetwork1
-  - ssid: !secret wifi_ssidNetwork2
-    password: !secret wifi_passwordNetwork2
-  - ssid: !secret wifi_ssidNetwork3
-    password: !secret wifi_passwordNetwork3
-  - ssid: !secret wifi_ssidNetwork4
-    password: !secret wifi_passwordNetwork4
-# Optional manual IP
-  manual_ip:
-    static_ip: static_ip_value
-    gateway: gateway_value
-    subnet: subnet_value
-    dns1: dns1_value
-    dns2: dns2_value
   on_boot:
     priority: -10
     then:
@@ -71,6 +54,24 @@ wifi:
     - switch.turn_on: led_enabled
 
 # Define switches to control LED and buzzer from HA
+captive_portal:
+wifi:
+  networks:
+  - ssid: !secret wifi_ssidNetwork1
+    password: !secret wifi_passwordNetwork1
+  - ssid: !secret wifi_ssidNetwork2
+    password: !secret wifi_passwordNetwork2
+  - ssid: !secret wifi_ssidNetwork3
+    password: !secret wifi_passwordNetwork3
+  - ssid: !secret wifi_ssidNetwork4
+    password: !secret wifi_passwordNetwork4
+# Optional manual IP
+  manual_ip:
+    static_ip: $static_ip_value
+    gateway: $gateway_value
+    subnet: $subnet_value
+    dns1: $dns1_value
+    dns2: $dns2_value
 switch:
 - platform: template
   name: "${friendly_name} Buzzer Enabled"
