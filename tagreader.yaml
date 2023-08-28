@@ -16,7 +16,7 @@ improv_serial:
 substitutions:
   name: tagreader
   friendly_name: TagReader
-  static_ip_value: 192.168.1.90
+  static_ip_value: 192.168.1.37
   gateway_value: 192.168.1.1
   subnet_value: 255.255.255.0
   dns1_value: 80.58.61.250
