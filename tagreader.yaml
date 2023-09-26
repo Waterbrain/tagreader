@@ -63,7 +63,7 @@ wifi:
     password: !secret wifi_passwordNetwork4
 # Optional manual IP
 <<<<<<< HEAD
-    manual_ip:
+  manual_ip:
     static_ip: "${static_ip}"
     gateway: "${gateway}"
     subnet: "${subnet}"
