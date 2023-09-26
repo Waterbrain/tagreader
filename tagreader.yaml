@@ -1,6 +1,16 @@
 ####################################################################################################################
 # basado en github://adonno/tagreader/tagreader.yaml
 # Insert your's SSID and Your's PWD after inital setup in the secrets.yaml
+# And in subtitions e.g.:
+#  static_ip: 192.168.1.37
+#  gateway: 192.168.1.1
+#  subnet: 255.255.255.0
+#  dns1: 80.58.61.250
+#  dns2: 80.58.61.254
+# This script is designed for the case in which you have different access points. If you only have one, wifi_ssidNetwork1, wifi_ssidNetwork2, wifi_ssidNetwork3, wifi_ssidNetwork4, put the same secrets file for all of them.
+# With wifi_passwordNetwork1, wifi_passwordNetwork2, wifi_passwordNetwork3, wifi_passwordNetwork4, do the same.
+# If you have more access points, add the values for 5, 6, etc.
+####################################################################################################################
 
 dashboard_import:
   package_import_url: github://waterbrain/tagreader/tagreader.yaml
@@ -53,11 +63,11 @@ wifi:
     password: !secret wifi_passwordNetwork4
 # Optional manual IP
   manual_ip:
-    static_ip: $static_ip_value
-    gateway: $gateway_value
-    subnet: $subnet_value
-    dns1: $dns1_value
-    dns2: $dns2_value
+    static_ip: $static_ip
+    gateway: $gateway
+    subnet: $subnet
+    dns1: $dns1
+    dns2: $dns2
 
   ap:
     ssid: ${name}
