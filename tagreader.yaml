@@ -52,12 +52,12 @@ wifi:
   - ssid: !secret wifi_ssidNetwork4
     password: !secret wifi_passwordNetwork4
 # Optional manual IP
-  manual_ip:
-    static_ip: $static_ip_value
-    gateway: $gateway_value
-    subnet: $subnet_value
-    dns1: $dns1_value
-    dns2: $dns2_value
+    manual_ip:
+    static_ip: "${static_ip}"
+    gateway: "${gateway}"
+    subnet: "${subnet}"
+    dns1: "${dns1}"
+    dns2: "${dns2}"
 
   ap:
     ssid: ${name}
