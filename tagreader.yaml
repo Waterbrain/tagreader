@@ -361,7 +361,20 @@ binary_sensor:
   - platform: status
     name: "${friendly_name} Status"
     entity_category: diagnostic
+ sensor:
+  - platform: wifi_signal # Reports the WiFi signal strength/RSSI in dB
+    name: "Señal WiFi dB"
+    id: wifi_signal_db
+    update_interval: 60s
+    entity_category: "diagnostic"
 
+  - platform: copy # Reports the WiFi signal strength in %
+    source_id: wifi_signal_db
+    name: "Señal WiFi %"
+    filters:
+      - lambda: return min(max(2 * (x + 100.0), 0.0), 100.0);
+    unit_of_measurement: "Señal %"
+    entity_category: "diagnostic"
 
 text_sensor:
   - platform: version
