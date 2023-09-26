@@ -10,6 +10,16 @@
 # This script is designed for the case in which you have different access points. If you only have one, wifi_ssidNetwork1, wifi_ssidNetwork2, wifi_ssidNetwork3, wifi_ssidNetwork4, put the same secrets file for all of them.
 # With wifi_passwordNetwork1, wifi_passwordNetwork2, wifi_passwordNetwork3, wifi_passwordNetwork4, do the same.
 # If you have more access points, add the values for 5, 6, etc.
+# Example of subtitions:
+#
+#substitutions:
+#  name: tagreader-dedf76
+#  friendly_name: TagReader-dedf76
+#  static_ip: 192.168.1.90
+#  gateway: 192.168.1.1
+#  subnet: 255.255.255.0
+#  dns1: 80.58.61.250
+#  dns2: 80.58.61.254  
 ####################################################################################################################
 
 dashboard_import:
@@ -62,15 +72,14 @@ wifi:
   - ssid: !secret wifi_ssidNetwork4
     password: !secret wifi_passwordNetwork4
 # Optional manual IP
-<<<<<<< HEAD
+
   manual_ip:
     static_ip: "${static_ip}"
     gateway: "${gateway}"
     subnet: "${subnet}"
     dns1: "${dns1}"
     dns2: "${dns2}"
-=======
->>>>>>> 2eb6ac6519f4d51e87fd5b9f1b9a0df4acd5cd66
+
 
   ap:
     ssid: ${name}
