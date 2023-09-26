@@ -70,12 +70,6 @@ wifi:
     dns1: "${dns1}"
     dns2: "${dns2}"
 =======
-  manual_ip:
-    static_ip: $static_ip
-    gateway: $gateway
-    subnet: $subnet
-    dns1: $dns1
-    dns2: $dns2
 >>>>>>> 2eb6ac6519f4d51e87fd5b9f1b9a0df4acd5cd66
 
   ap:
